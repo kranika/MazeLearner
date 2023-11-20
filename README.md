@@ -7,7 +7,7 @@ Python RayCasting  with PyGame.
 
 
 <h3>Setup</h3>
-Install PyGame:`pip install pygame`<br>
+Install PyGame:`pip install pygame`
 Install Math: `pip install math`
 
 
