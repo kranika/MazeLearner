@@ -15,7 +15,7 @@ Refer to this [PyCairo tutorial](https://github.com/kuriofoolio/CairoPlayground.
 
     Install Panda3D: `pip install panda3D`
 
-## Contributing
+## Contribution
 Contributions are welcome! Feel free to submit bug reports, feature requests, or even pull requests to improve the game.
 
 ## License
