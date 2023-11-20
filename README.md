@@ -1,6 +1,6 @@
 
 # MazeLearner
-A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Word of the Day Challenge' in a maze. The player navigates within the maze, with letters of a certain color as the guide towards the end goal
+A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Word of the Day Challenge' in a maze. The player navigates within the maze, with the help of letters which will adapt a certain color, as the guide towards the end goal.
 
 
 ## Setting up the environment
