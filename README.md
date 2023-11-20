@@ -3,7 +3,7 @@
 A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Word of the Day Challenge' in a maze. The player navigates within the maze, with letters of a certain color as the guide towards the end goal
 
 
-# Setting up the environment
+## Setting up the environment
 1. PyCairo configuration.
 Refer to this [PyCairo tutorial](https://github.com/kuriofoolio/CairoPlayground.git) to get started with PyCairo.
 
@@ -15,9 +15,9 @@ Refer to this [PyCairo tutorial](https://github.com/kuriofoolio/CairoPlayground.
 
     Install Panda3D: `pip install panda3D`
 
-# Contributing
+## Contributing
 Contributions are welcome! Feel free to submit bug reports, feature requests, or even pull requests to improve the game.
 
-# License
+## License
 This project is licensed under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
 
