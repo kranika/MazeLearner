@@ -1,5 +1,11 @@
-# MAZELEARNER
-Python raycasting  with pygame
+# MazeLearner
+<h3>Overview</h3>
+<b>MazeLearner</b>-Unravelling the maze's secret word by following guiding letters on the path to its centre. Developed using 
+Python RayCasting  with PyGame.
 
-Install pygame: `pip install pygame`
+
+
+<h3>Setup</h3>
+Install PyGame:`pip install pygame`<br>
+Install Math: `pip install math`
 
