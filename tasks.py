@@ -1,5 +1,7 @@
 import json, logging , time
 from typing import *
+
+#configure logging
 logging.basicConfig(filename='log.txt', level=logging.INFO)
 
 
