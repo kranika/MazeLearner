@@ -1,14 +1,12 @@
+# MAZELEARNER
+A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Word of the Day Challenge' in a maze. The player navigates within the maze, with letters of a certain color as the guide towards the end goal
 
-# MazeLearner
-<h3>Overview</h3>
-<b>MazeLearner</b>-Unravelling the maze's secret word by following guiding letters on the path to its centre. Developed using 
-Python RayCasting  with PyGame.
+# Setting up the environment
+##  PyCairo configuration
+Refer to this [PyCairo tutorial](https://github.com/kuriofoolio/CairoPlayground.git) to get started with PyCairo
 
-
-
-<h3>Setup</h3>
+## PyGame configuration
 Install pygame: `pip install pygame`
-Install Math: `pip install math`
 
-
-
+## Panda3D configuration
+Install panda3D: `pip install panda3D`
