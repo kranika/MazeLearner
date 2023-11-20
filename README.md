@@ -9,8 +9,8 @@ Refer to this [PyCairo tutorial](https://github.com/kuriofoolio/CairoPlayground.
 
 2. PyGame configuration.
 
-Install pygame: `pip install pygame`
+    Install PyGame: `pip install pygame`
 
 3. Panda3D configuration.
 
-Install panda3D: `pip install panda3D`
+    Install Panda3D: `pip install panda3D`
