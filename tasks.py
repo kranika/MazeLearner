@@ -1,4 +1,4 @@
-import json, logging , time
+import json, logging , time, requests, re
 from typing import *
 
 #configure logging
@@ -27,7 +27,8 @@ def read_json(file_name:str)->Dict[int,str]:
     with open(f'{file_name}.json') as json_file:
         data = json.load(json_file)
         return data
-    
+
+
 
 word_list =[
   'ujamaa','mzee','zaire','boep','marabi' ,'thebe','hoodia','vly','ouabain', 'kaama','harmel', 'tenrec', 'tanrec', 

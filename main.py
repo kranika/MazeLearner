@@ -30,7 +30,7 @@ sky = pg.transform.smoothscale(pg.image.load('skybox.jpg').convert(), (12 * hori
 width, height = 800, 600
 screen = pg.display.set_mode((width, height))
 # pg.display.set_caption("Pygame Word Display")
-font = pg.font.Font(None, 36)
+font = pg.font.Font("mario.ttf", 36)
 
 # word = "KIPUNJI"
 
@@ -81,21 +81,18 @@ while running:
     upscaled.blit(font.render(fps, 1, [255, 255, 255]), [0, 0])
     screen.blit(upscaled, (0, 0))
 
-# my code
-# Clear the screen
-    screen.fill((0, 0, 0))
+    # my code starts 
+    # Clear the screen
+    # screen.fill((1, 1, 1))
      # Blit the text onto the screen
     screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2))
 
     # Update the display
     # pg.display.flip()
 
+    #my code ends
+
     pg.display.update()
-
-
-
-
-
 
 
 pg.quit()
