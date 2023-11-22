@@ -40,11 +40,14 @@ def remove_html_tags(text):
     clean = re.compile('<.*?>')
     return re.sub(clean, '', text)
 
+# this function defines a word using wordnik api
 def defineWord(word:str):
+    
+    #wordnik only accesses word as lowercase
     word=word.lower()
 
     # Access your wordnik API key
-    api_key = os.getenv("API_KEY")
+    wordnik_api_key = os.getenv("WORDNIK_API_KEY")
 
     url='https://api.wordnik.com/v4/word.json/{}/definitions'.format(word)
     params={
@@ -54,7 +57,7 @@ def defineWord(word:str):
         'sourceDictionaries':'wiktionary',
         'useCanonical':'false',
         'includeTags':'false',
-        'api_key':f'{api_key}'
+        'api_key':f'{wordnik_api_key}'
     }
     response=requests.get(url,params=params)
     try:
