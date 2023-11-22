@@ -1,5 +1,9 @@
-import json, logging , time, requests, re
+import json, logging , time, requests, re,  os
 from typing import *
+from dotenv import load_dotenv
+
+# Load any environment variables from .env
+load_dotenv()
 
 #configure logging
 logging.basicConfig(filename='log.txt', level=logging.INFO)
@@ -29,6 +33,35 @@ def read_json(file_name:str)->Dict[int,str]:
         return data
 
 
+  
+# this function removes html tags from a string 
+def remove_html_tags(text):
+    """Remove html tags from a string"""
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
+
+def defineWord(word:str):
+    word=word.lower()
+
+    # Access your wordnik API key
+    api_key = os.getenv("API_KEY")
+
+    url='https://api.wordnik.com/v4/word.json/{}/definitions'.format(word)
+    params={
+        'limit':200,
+        'partOfSpeech':'noun',
+        'includeRelated':'false',
+        'sourceDictionaries':'wiktionary',
+        'useCanonical':'false',
+        'includeTags':'false',
+        'api_key':f'{api_key}'
+    }
+    response=requests.get(url,params=params)
+    try:
+        return remove_html_tags(response.json()[0]['text'])
+    except KeyError:
+        return response.json()['message']
+
 
 word_list =[
   'ujamaa','mzee','zaire','boep','marabi' ,'thebe','hoodia','vly','ouabain', 'kaama','harmel', 'tenrec', 'tanrec', 
@@ -53,3 +86,4 @@ word_list =[
 # create a json file from the list above
 # list_to_json(word_list,'words')
 
+# print(defineWord('kipunji'))
