@@ -29,7 +29,11 @@ sky = pg.transform.smoothscale(pg.image.load('skybox.jpg').convert(), (12 * hori
 # Set up display
 width, height = 800, 600
 screen = pg.display.set_mode((width, height))
-# pg.display.set_caption("Pygame Word Display")
+
+#screen display title
+pg.display.set_caption("Maze Learner")
+
+# custom font 
 font = pg.font.Font("mario.ttf", 36)
 
 # word = "KIPUNJI"
