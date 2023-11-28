@@ -1,4 +1,5 @@
-let word_list =[
+
+word_list =[
   'ujamaa','mzee','zaire','boep','marabi' ,'thebe','hoodia','vly','ouabain', 'kaama','harmel', 'tenrec', 'tanrec', 
   'kierie', 'loiasis', 'mhorr',   'dika','laura',   'VOUDOU','vaudoux', 'VODUN','tampan', 'dagga', 'boet', 'abuna',
   'khamsin', 'KAMSEEN', 'KAMSIN', 'KHAMSEEN','VODOUN',  'VOODOO','vervet', 'whenwe','SCIROCCO',  'sirocco', 'SIROC',
@@ -16,4 +17,9 @@ let word_list =[
       'nyala', 'STEENBUCK', 'STEENBOK', 'steinbok','STEINBOCK', 'khaya', 'WHYDAH',  'WHIDAH',
       
       
-];
+]
+
+// # create a json file from the list above
+// # list_to_json(word_list,'words')
+
+// # print(defineWord('kipunji'))

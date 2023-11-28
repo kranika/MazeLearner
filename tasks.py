@@ -1,12 +1,24 @@
-import json, logging , time, requests, re,  os
+import json, logging , time, requests, re,  os,math,cairo
 from typing import *
 from dotenv import load_dotenv
+
+# global resource paths
+IMAGE_PATH='res/img'
+FONT_PATH='res/fonts'
+JS_PATH='res/js'
 
 # Load any environment variables from .env
 load_dotenv()
 
 #configure logging
 logging.basicConfig(filename='log.txt', level=logging.INFO)
+
+#create a surface to draw pacman 
+# surface=cairo.ImageSurface(cairo.FORMAT_RGB24,600,400)
+# ctx=cairo.Context(surface)
+# ctx.set_source_rgb(.33, .33, .33)
+# ctx.stroke() 
+
 
 
 def list_to_json(word_list:list,file_name:str)->None:
@@ -33,7 +45,6 @@ def read_json(file_name:str)->Dict[int,str]:
         return data
 
 
-  
 # this function removes html tags from a string 
 def remove_html_tags(text):
     """Remove html tags from a string"""
@@ -66,27 +77,16 @@ def defineWord(word:str):
         return response.json()['message']
 
 
-word_list =[
-  'ujamaa','mzee','zaire','boep','marabi' ,'thebe','hoodia','vly','ouabain', 'kaama','harmel', 'tenrec', 'tanrec', 
-  'kierie', 'loiasis', 'mhorr',   'dika','laura',   'VOUDOU','vaudoux', 'VODUN','tampan', 'dagga', 'boet', 'abuna',
-  'khamsin', 'KAMSEEN', 'KAMSIN', 'KHAMSEEN','VODOUN',  'VOODOO','vervet', 'whenwe','SCIROCCO',  'sirocco', 'SIROC',
-'VODOU','ackee', 'akee','zorille', 'zoril', 'zorilla','pesewa','cedi', 'bwana', 'matatu', 'benga', 'kelim', 'kilim', 'indaba',  'kitenge', 'tajine', 'quango', 'tilapia', 
-  'reedbuck', 'ngwee', 'inkosi', 'lekgotla', 'ASSaGAI', 'BATELEUR', 'wenge', 'braai', 'ka', 'stoep', 'kabaka', 
-  'kaftan', 'toea', 'kikoi', 'boerewors', 'obi', 'ASSEGAI', 'ubuntu', 'kora', 'naira', 'duyker', 'AMAKHOSI',
-   'kwanza', 'amakosi', 'boubou', 'mbira', 'skollie', 'buchu', 'kraal', 'tsotsi', 'aoudad', 'makuta', 'kente', 
-   'iroko', 'INkhosi', 'zimb', 'volk', 'obeah', 'zareba', 'fundi', 'dashiki', 'kloof', 'guereza', 'kipunji',
-    'tarboosh', 'kwacha',  'soukous', 'duiker', 'razzia', 'waragi', 'nyala', 'kalimba', 'quagga','boma',
-     'jomo',  'likuta', 'matooke', 'pronk', 'lwei', 'ouguiya', 'kufi',  'kgotla', 'MATAMBALA', 'GUMBO', 'potto', 'gombo', 'bredie',
-     'sosatie', 'couscous', 'fynbos', 'mitumba', 'matoke', 'tambala', 'manyatta', 'injera', 'alma', 'bumster',
-      'shweshwe', 'kobo', 'mzungu',  'nakfa','djembe' ,'kniphofia','kanga','shamba','nerine','safari', 
-      'raffia','sultana', 'jambok','sjambok','askari','springbok','rooinek', 'hieratic', 'rooikat', 'donga', 'robusta',
-      'maloti', 'mielie', 'loti', 'mealie','laager','spaza', 'mooli','pula','hoodia','ZOMBIe','BUSHBUCK', 'boshbok',
-      'nyala', 'STEENBUCK', 'STEENBOK', 'steinbok','STEINBOCK', 'khaya', 'WHYDAH',  'WHIDAH',
-      
-      
-]
 
-# create a json file from the list above
-# list_to_json(word_list,'words')
 
-# print(defineWord('kipunji'))
+# # this function takes custom circle params
+# #the context is passed because this function is called from outside this function
+# def draw_circle(x, y, r,start_angle:int,end_angle:int,ctx=ctx,)->None :
+#     # ,red=.33, green=.67, blue=0
+#      # Set the circle's center coordinates (x, y) and radius (r)
+#      #start angle is where your arc starts 
+#      #end angle is where your arc ends 
+#     ctx.arc(x, y, r, (start_angle)* math.pi, (end_angle)* math.pi)
+#     ctx.set_source_rgb(1, 0, 0)
+#     ctx.fill()
+
