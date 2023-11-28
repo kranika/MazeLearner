@@ -31,6 +31,7 @@ word = words[f'{random_index}']
 
 # Set up letters
 # letters = list(word)
+# print(letters)
 
 # Set up letters
 letters = [{'x': random.randint(0, WIDTH - LETTER_SIZE), 'y': random.randint(0, HEIGHT - LETTER_SIZE)}
