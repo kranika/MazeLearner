@@ -2,3 +2,6 @@ pusher.sh
 #tasks.py
 log.txt
 .env
+test.txt
+ideas.txt
+pacman.py
