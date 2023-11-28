@@ -9,10 +9,10 @@ load_dotenv()
 logging.basicConfig(filename='log.txt', level=logging.INFO)
 
 #create a surface to draw pacman 
-surface=cairo.ImageSurface(cairo.FORMAT_RGB24,600,400)
-ctx=cairo.Context(surface)
-ctx.set_source_rgb(.33, .33, .33)
-ctx.stroke() 
+# surface=cairo.ImageSurface(cairo.FORMAT_RGB24,600,400)
+# ctx=cairo.Context(surface)
+# ctx.set_source_rgb(.33, .33, .33)
+# ctx.stroke() 
 
 
 
@@ -75,14 +75,14 @@ def defineWord(word:str):
 
 
 
-# this function takes custom circle params
-#the context is passed because this function is called from outside this function
-def draw_circle(x, y, r,start_angle:int,end_angle:int,ctx=ctx,)->None :
-    # ,red=.33, green=.67, blue=0
-     # Set the circle's center coordinates (x, y) and radius (r)
-     #start angle is where your arc starts 
-     #end angle is where your arc ends 
-    ctx.arc(x, y, r, (start_angle)* math.pi, (end_angle)* math.pi)
-    ctx.set_source_rgb(1, 0, 0)
-    ctx.fill()
+# # this function takes custom circle params
+# #the context is passed because this function is called from outside this function
+# def draw_circle(x, y, r,start_angle:int,end_angle:int,ctx=ctx,)->None :
+#     # ,red=.33, green=.67, blue=0
+#      # Set the circle's center coordinates (x, y) and radius (r)
+#      #start angle is where your arc starts 
+#      #end angle is where your arc ends 
+#     ctx.arc(x, y, r, (start_angle)* math.pi, (end_angle)* math.pi)
+#     ctx.set_source_rgb(1, 0, 0)
+#     ctx.fill()
 

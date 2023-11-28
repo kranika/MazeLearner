@@ -3,6 +3,11 @@ import math, tasks, random
 
 from movement import movement
 
+IMAGE_PATH='res/img'
+FONT_PATH='res/fonts'
+JS_PATH='res/js'
+
+
 pg.init()
 screen = pg.display.set_mode((800, 600))
 clock = pg.time.Clock()
@@ -22,8 +27,8 @@ vertical_res = int(horizontal_res * 0.75)
 frame = pg.Surface([horizontal_res, vertical_res])
 mod = 60 / horizontal_res
 pg.event.set_grab(1)
-wall = pg.image.load('res/img/images2.jpeg').convert()
-sky = pg.transform.smoothscale(pg.image.load('res/img/skybox.jpg').convert(), (12 * horizontal_res, vertical_res))
+wall = pg.image.load(f'{IMAGE_PATH}/images2.jpeg').convert()
+sky = pg.transform.smoothscale(pg.image.load(f'{IMAGE_PATH}/skybox.jpg').convert(), (12 * horizontal_res, vertical_res))
 
 #my code 
 # Set up display
@@ -34,12 +39,12 @@ screen = pg.display.set_mode((width, height))
 pg.display.set_caption("Maze Learner")
 
 # custom font 
-font = pg.font.Font("res/fonts/mario.ttf", 36)
+font = pg.font.Font(f'{FONT_PATH}/mario.ttf', 36)
 
 # word = "KIPUNJI"
 
 #access the json file that contains the words 
-words=tasks.read_json('res/js/words')
+words=tasks.read_json(f'{JS_PATH}/words')
 
 # generate a random index
 random_index=random.randint(0,len(words))
