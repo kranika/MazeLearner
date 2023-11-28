@@ -18,7 +18,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
 * Run the project by typing the following command:
 
 `python main.py`
-  (This above instruction depends on how you run your .py files)
+  (This instruction depends on how you run your .py files)
 
 ## Contribution
 Contributions are welcome! Feel free to submit bug reports, feature requests, or even pull requests to improve the game.
