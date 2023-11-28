@@ -2,6 +2,11 @@ import json, logging , time, requests, re,  os,math,cairo
 from typing import *
 from dotenv import load_dotenv
 
+# global resource paths
+IMAGE_PATH='res/img'
+FONT_PATH='res/fonts'
+JS_PATH='res/js'
+
 # Load any environment variables from .env
 load_dotenv()
 
@@ -40,7 +45,6 @@ def read_json(file_name:str)->Dict[int,str]:
         return data
 
 
-  
 # this function removes html tags from a string 
 def remove_html_tags(text):
     """Remove html tags from a string"""
