@@ -1,5 +1,4 @@
-import pygame, tasks, random
-import sys
+import pygame, tasks, random, time ,sys
 
 pygame.init()
 
@@ -28,6 +27,7 @@ random_index = random.randint(0, len(words))
 
 # Pick a random word
 word = words[f'{random_index}']
+word_meaning=tasks.defineWord(word)
 
 # Set up letters
 split_word = list(word)
@@ -69,8 +69,9 @@ while True:
                 pacman_y += MOVEMENT_SPEED
 
     # Check collisions
-    if check_collisions():
-        print(f"Pac-Man picked up a letter! You have {POINTS} points")
+    collected_letter= check_collisions()
+    if collected_letter:
+        print(f"You've picked up a {collected_letter}! You have {POINTS} points")
 
     # Draw background
     screen.fill(BACKGROUND_COLOR)
@@ -93,8 +94,12 @@ while True:
     # Check if all letters are picked
     if not letters:
         font = pygame.font.SysFont("Arial", 36)
-        text = font.render("Pac-Man picked up all letters!", True, (255, 255, 255))
-        screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 2 - text.get_height() // 2))
+        word_text = font.render(f"Good job. You found {word.upper()}", True, (255, 255, 255))
+        screen.blit(word_text, (WIDTH // 2 - word_text.get_width() // 2, HEIGHT // 2 - word_text.get_height() // 2))
+
+        time.sleep(3)
+        meaning_text = font.render(f"{word_meaning}", True, (255, 255, 255))
+        screen.blit(meaning_text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 2 - meaning_text.get_height() // 2))
 
     # Update the display
     pygame.display.flip()
