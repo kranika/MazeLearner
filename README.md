@@ -4,10 +4,21 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
 
 
 ## Setting up the environment
-Required libraries and packages are listed in the `requirements.txt` file.
+* Clone the repository as shown:
 
-To install the modules listed in the Python requirements file into the project environment, run the following command on your project directory:
+`git@github.com:kranika/MazeLearner.git`
+* Change to the project directory:
+
+`cd MazeLearner`
+* Required libraries and packages are listed in the `requirements.txt` file.
+
+* To install the modules listed in the Python requirements file into the project environment, run the following command on your project directory:
+
 `pip install -r requirements.txt`
+* Run the project by typing the following command:
+
+`python main.py`
+  (This above instruction depends on how you run your .py files)
 
 ## Contribution
 Contributions are welcome! Feel free to submit bug reports, feature requests, or even pull requests to improve the game.
