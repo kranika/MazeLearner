@@ -1,6 +1,6 @@
-import pygame, tasks, random, time ,sys
+import pygame as pg, tasks, random, time ,sys
 
-pygame.init()
+pg.init()
 
 # Constants
 WIDTH, HEIGHT = 800, 600
@@ -13,8 +13,8 @@ LETTER_SIZE = 50
 SWITCH_DELAY = 3000  #ms
 
 # Set up display
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Loot trial")
+screen = pg.display.set_mode((WIDTH, HEIGHT))
+pg.display.set_caption("Loot trial")
 
 # Set up Pac-Man
 pacman_x, pacman_y = WIDTH // 2, HEIGHT // 2
@@ -52,25 +52,25 @@ def check_collisions():
     return None
 
 # Game loop
-clock = pygame.time.Clock()
-switch_time = pygame.time.get_ticks()  # Initial time for text switch
+clock = pg.time.Clock()
+switch_time = pg.time.get_ticks()  # Initial time for text switch
 switched = False  # Flag to check if text has been switched
 
 while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            pg.quit()
             sys.exit()
 
         # Update Pac-Man position dynamically
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
+        elif event.type == pg.KEYDOWN:
+            if event.key == pg.K_LEFT:
                 pacman_x -= MOVEMENT_SPEED
-            elif event.key == pygame.K_RIGHT:
+            elif event.key == pg.K_RIGHT:
                 pacman_x += MOVEMENT_SPEED
-            elif event.key == pygame.K_UP:
+            elif event.key == pg.K_UP:
                 pacman_y -= MOVEMENT_SPEED
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pg.K_DOWN:
                 pacman_y += MOVEMENT_SPEED
 
     # Check collisions
@@ -84,21 +84,21 @@ while True:
     # Draw letters
     for letter_info in letters:
         letter_x, letter_y, letter = letter_info['x'], letter_info['y'], letter_info['letter']
-        font = pygame.font.Font(None, LETTER_SIZE)
+        font = pg.font.Font(None, LETTER_SIZE)
         text = font.render(letter, True, (255, 0, 0))
         screen.blit(text, (letter_x, letter_y))
 
     # Draw Pac-Man
-    pygame.draw.circle(screen, PACMAN_COLOR, (int(pacman_x), int(pacman_y)), PACMAN_RADIUS)
-    pygame.draw.polygon(screen, BACKGROUND_COLOR, [(pacman_x, pacman_y)] + [
-        (pacman_x + PACMAN_RADIUS * pygame.math.Vector2(1, 0).rotate(pacman_angle + angle).x,
-         pacman_y + PACMAN_RADIUS * pygame.math.Vector2(1, 0).rotate(pacman_angle + angle).y)
+    pg.draw.circle(screen, PACMAN_COLOR, (int(pacman_x), int(pacman_y)), PACMAN_RADIUS)
+    pg.draw.polygon(screen, BACKGROUND_COLOR, [(pacman_x, pacman_y)] + [
+        (pacman_x + PACMAN_RADIUS * pg.math.Vector2(1, 0).rotate(pacman_angle + angle).x,
+         pacman_y + PACMAN_RADIUS * pg.math.Vector2(1, 0).rotate(pacman_angle + angle).y)
         for angle in range(-30, 31, 10)
     ])
 
     # Check if all letters are picked
     if not letters:
-        font = pygame.font.SysFont("Arial", 36)
+        font = pg.font.SysFont("Arial", 36)
         word_text = font.render(f"Good job. You found {word.upper()}", True, (255, 255, 255))
         screen.blit(word_text, (WIDTH // 2 - word_text.get_width() // 2, HEIGHT // 2 - word_text.get_height() // 2))
         
@@ -106,7 +106,7 @@ while True:
         screen.blit(meaning_text, (WIDTH // 2 - meaning_text.get_width() // 2, HEIGHT // 2 - meaning_text.get_height() // 2))
 
     # Update the display
-    pygame.display.flip()
+    pg.display.flip()
 
     # Cap the frame rate
     clock.tick(10)
