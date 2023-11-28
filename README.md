@@ -15,6 +15,11 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
 * To check the required modules for the project, run the following command on your project directory:
 
 `pip freeze > requirements.txt`
+
+* Install the required modules in the `requirements.txt` file bu running the following command:
+
+`pip install -r requirements.txt`
+
 * Run the project by typing the following command:
 
 `python main.py`
