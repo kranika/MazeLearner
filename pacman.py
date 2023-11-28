@@ -10,7 +10,7 @@ PACMAN_COLOR = (255, 255, 0)
 PACMAN_RADIUS = 30
 MOVEMENT_SPEED = 10
 POINTS = 0
-LETTER_SIZE = 20
+LETTER_SIZE = 50
 
 # Set up display
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -30,23 +30,24 @@ random_index = random.randint(0, len(words))
 word = words[f'{random_index}']
 
 # Set up letters
-# letters = list(word)
-# print(letters)
+split_word = list(word)
+print(split_word)
 
 # Set up letters
-letters = [{'x': random.randint(0, WIDTH - LETTER_SIZE), 'y': random.randint(0, HEIGHT - LETTER_SIZE)}
-           for _ in range(5)]
+# Set up letters
+letters = [{'x': random.randint(0, WIDTH - LETTER_SIZE), 'y': random.randint(0, HEIGHT - LETTER_SIZE), 'letter': letter}
+           for letter in split_word]
+
 
 # Function to check collisions
 def check_collisions():
-    global pacman_x, pacman_y, POINTS
-    for letter in letters:
-        if (pacman_x - letter['x']) ** 2 + (pacman_y - letter['y']) ** 2 <= (PACMAN_RADIUS + LETTER_SIZE) ** 2:
-            letters.remove(letter)
-            POINTS+=1
-            return True
-    return False
-
+    global pacman_x, pacman_y
+    for letter_info in letters:
+        letter_x, letter_y = letter_info['x'], letter_info['y']
+        if (pacman_x - letter_x) ** 2 + (pacman_y - letter_y) ** 2 <= (PACMAN_RADIUS + LETTER_SIZE) ** 2:
+            letters.remove(letter_info)
+            return letter_info['letter']
+    return None
 
 # Game loop
 clock = pygame.time.Clock()
@@ -75,9 +76,11 @@ while True:
     screen.fill(BACKGROUND_COLOR)
 
     # Draw letters
-    for letter in letters:
-        pygame.draw.rect(screen, (255, 0, 0), (letter['x'], letter['y'], LETTER_SIZE, LETTER_SIZE))
-
+    for letter_info in letters:
+        letter_x, letter_y, letter = letter_info['x'], letter_info['y'], letter_info['letter']
+        font = pygame.font.Font(None, LETTER_SIZE)
+        text = font.render(letter, True, (255, 0, 0))
+        screen.blit(text, (letter_x, letter_y))
 
     # Draw Pac-Man
     pygame.draw.circle(screen, PACMAN_COLOR, (int(pacman_x), int(pacman_y)), PACMAN_RADIUS)
