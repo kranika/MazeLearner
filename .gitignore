@@ -1,9 +1,10 @@
 pusher.sh
 #tasks.py
 log.txt
-.env
+.env 
 test.txt
 ideas.txt
+res/js/words.js
 test.py
 
 venv/
