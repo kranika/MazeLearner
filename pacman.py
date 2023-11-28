@@ -10,6 +10,7 @@ PACMAN_RADIUS = 30
 MOVEMENT_SPEED = 10
 POINTS = 0
 LETTER_SIZE = 50
+SWITCH_DELAY = 3000  #ms
 
 # Set up display
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -41,16 +42,20 @@ letters = [{'x': random.randint(0, WIDTH - LETTER_SIZE), 'y': random.randint(0, 
 
 # Function to check collisions
 def check_collisions():
-    global pacman_x, pacman_y
+    global pacman_x, pacman_y, POINTS
     for letter_info in letters:
         letter_x, letter_y = letter_info['x'], letter_info['y']
         if (pacman_x - letter_x) ** 2 + (pacman_y - letter_y) ** 2 <= (PACMAN_RADIUS + LETTER_SIZE) ** 2:
             letters.remove(letter_info)
+            POINTS+=1
             return letter_info['letter']
     return None
 
 # Game loop
 clock = pygame.time.Clock()
+switch_time = pygame.time.get_ticks()  # Initial time for text switch
+switched = False  # Flag to check if text has been switched
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -71,7 +76,7 @@ while True:
     # Check collisions
     collected_letter= check_collisions()
     if collected_letter:
-        print(f"You've picked up a {collected_letter}! You have {POINTS} points")
+        print(f"You've picked up {collected_letter}! You have {POINTS} points")
 
     # Draw background
     screen.fill(BACKGROUND_COLOR)
@@ -96,10 +101,9 @@ while True:
         font = pygame.font.SysFont("Arial", 36)
         word_text = font.render(f"Good job. You found {word.upper()}", True, (255, 255, 255))
         screen.blit(word_text, (WIDTH // 2 - word_text.get_width() // 2, HEIGHT // 2 - word_text.get_height() // 2))
-
-        time.sleep(3)
+        
         meaning_text = font.render(f"{word_meaning}", True, (255, 255, 255))
-        screen.blit(meaning_text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 2 - meaning_text.get_height() // 2))
+        screen.blit(meaning_text, (WIDTH // 2 - meaning_text.get_width() // 2, HEIGHT // 2 - meaning_text.get_height() // 2))
 
     # Update the display
     pygame.display.flip()
