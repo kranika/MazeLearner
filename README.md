@@ -16,7 +16,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
 
 `pip freeze > requirements.txt`
 
-* Install the required modules in the `requirements.txt` file bu running the following command:
+* Install the required modules in the `requirements.txt` file by running the following command:
 
 `pip install -r requirements.txt`
 
