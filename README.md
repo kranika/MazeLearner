@@ -12,7 +12,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
 `cd MazeLearner`
 * Required libraries and packages are listed in the `requirements.txt` file.
 
-* To check the required modules for the project, run the following command on your project directory:
+* To check/refresh the required modules for the project, run the following command on your project directory:
 
 `pip freeze > requirements.txt`
 
@@ -31,7 +31,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
   
 `logging.basicConfig(filename='log.txt', level=logging.INFO)`
 
-  Learn more about [logging](https://docs.python.org/3/library/logging.html).
+  Learn more about [Python logs](https://docs.python.org/3/library/logging.html).
   
 
 * You may need to obtain a **Wordnik API Key** in order to work with word meanings.
