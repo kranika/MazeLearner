@@ -1,8 +1,18 @@
+# bash script for git commits
 pusher.sh
+
+#personal log file
 log.txt
+
+# environment variables like api keys
 .env 
+
+# word source
 res/js/words.js
+
+# any test files 
 /test
 
+#virtual environment
 venv/
 
