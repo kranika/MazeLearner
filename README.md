@@ -35,6 +35,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
   
 
 * You may need to obtain a **Wordnik API Key** in order to work with word meanings.
+
   Visit [Wordnik](https://developer.wordnik.com) to learn more.
 
 ## Contribution
