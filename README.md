@@ -25,6 +25,15 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
 `python main.py`
   (This instruction depends on how you run your .py files)
 
+* Setting up personal logs
+
+`import logging`
+  
+`logging.basicConfig(filename='log.txt', level=logging.INFO)`
+
+* You may need to obtain a **Wordnik API Key** in order to work with word meanings.
+  Visit [inline link](https://developer.wordnik.com) to learn more.
+
 ## Contribution
 Contributions are welcome! Feel free to submit bug reports, feature requests, or even pull requests to improve the game.
 
