@@ -141,7 +141,7 @@ while running:
 
 
 
-    # Update the display
+
     # pg.display.flip()
 
 
