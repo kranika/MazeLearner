@@ -144,7 +144,7 @@ while running:
     # Update the display
     # pg.display.flip()
 
- #my code ends
+
 
     pg.display.update()
 
