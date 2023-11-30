@@ -39,7 +39,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
   Visit [Wordnik](https://developer.wordnik.com) to learn more.
 
 ## Contribution
-Contributions are welcome! Feel free to submit bug reports, feature requests, or even pull requests to improve the game.
+Contributions are welcome! Feel free to submit any bug reports, feature requests, or even pull requests to improve the game.
 
 ## License
 This project is licensed under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
