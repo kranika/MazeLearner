@@ -101,9 +101,12 @@ while True:
         font = pg.font.SysFont("Arial", 36)
         word_text = font.render(f"Good job. You found {word.upper()}", True, (255, 255, 255))
         screen.blit(word_text, (WIDTH // 2 - word_text.get_width() // 2, HEIGHT // 2 - word_text.get_height() // 2))
-        
-        meaning_text = font.render(f"{word_meaning}", True, (255, 255, 255))
-        screen.blit(meaning_text, (WIDTH // 2 - meaning_text.get_width() // 2, HEIGHT // 2 - meaning_text.get_height() // 2))
+
+    #    the meaning and word texts are clashing
+    # a fix should be found first befire uncommenting this 
+
+        # meaning_text = font.render(f"{word_meaning}", True, (255, 255, 255))
+        # screen.blit(meaning_text, (WIDTH // 2 - meaning_text.get_width() // 2, HEIGHT // 2 - meaning_text.get_height() // 2))
 
     # Update the display
     pg.display.flip()

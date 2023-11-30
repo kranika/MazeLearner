@@ -1,12 +1,18 @@
+# bash script for git commits
 pusher.sh
-#tasks.py
-log.txt
-.env 
-test.txt
-ideas.txt
-res/js/words.js
-main-ruman.py
-test.py
 
+#personal log file
+log.txt
+
+# environment variables like api keys
+.env 
+
+# word source
+res/js/words.js
+
+# any test files 
+/test
+
+#virtual environment
 venv/
 
