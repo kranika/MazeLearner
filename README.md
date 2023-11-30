@@ -12,7 +12,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
 `cd MazeLearner`
 * Required libraries and packages are listed in the `requirements.txt` file.
 
-* To check/refresh the required modules for the project, run the following command on your project directory:
+* To check or refresh the required modules for the project, run the following command on your project directory:
 
 `pip freeze > requirements.txt`
 
