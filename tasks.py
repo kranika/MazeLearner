@@ -90,3 +90,30 @@ def defineWord(word:str):
 #     ctx.set_source_rgb(1, 0, 0)
 #     ctx.fill()
 
+
+def returnSurface(width=800,height=600 ):
+    # width, height = 800, 600
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
+    return surface
+
+def drawCairoSurface():
+    # width, height = 800, 600
+    surface = returnSurface()
+    context = cairo.Context(surface)
+    return context
+
+def drawShield(context):
+    context.set_source_rgb(0, 0, 1)  # Set color to blue
+    context.set_line_width(5)
+
+    # Draw shield shape
+    context.move_to(400, 300)  # Move to center
+    for angle in range(-45, 46, 10):
+        x = 400 + 30 * math.cos(math.radians(angle))
+        y = 300 + 30 * math.sin(math.radians(angle))
+        context.line_to(x, y)
+
+    context.close_path()
+    context.fill()
+
+
