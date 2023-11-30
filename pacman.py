@@ -32,7 +32,7 @@ word_meaning=tasks.defineWord(word)
 
 # Set up letters
 split_word = list(word)
-print(split_word)
+# print(split_word)
 
 # Set up letters
 # Set up letters
@@ -99,7 +99,7 @@ while True:
     # Check if all letters are picked
     if not letters:
         font = pg.font.SysFont("Arial", 36)
-        word_text = font.render(f"Good job. You found {word.upper()}", True, (255, 255, 255))
+        word_text = font.render(f"Good job. You found {word.upper()} and scored {POINTS} points", True, (255, 255, 255))
         screen.blit(word_text, (WIDTH // 2 - word_text.get_width() // 2, HEIGHT // 2 - word_text.get_height() // 2))
 
     #    the meaning and word texts are clashing
