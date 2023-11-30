@@ -39,20 +39,39 @@ font = pg.font.Font(f'{tasks.FONT_PATH}/mario.ttf', 36)
 
 # word = "KIPUNJI"
 
-#access the json file that contains the words 
+#access the json file that contains the words
 words=tasks.read_json(f'{tasks.JS_PATH}/words')
 
 # generate a random index
 random_index=random.randint(0,len(words))
 
-#pick a random word 
+#pick a random word
 word=words[f'{random_index}']
 
-# letters=list(word)
+letters=list(word)
 
-# print(letters)
 
-text = font.render(word, True, (255, 255, 255))
+
+
+
+#text = font.render(word, True, (255, 255, 255))
+
+word_length = len(word)
+
+# Calculate how much space each letter should cover
+letter_width = width // word_length
+
+# Initialize the letter positions list
+letter_positions = []
+
+# Calculate positions for each letter in the word
+for i in range(word_length):
+    x = i * letter_width + (letter_width // 2)  # Centering the letter horizontally
+    y = height // 2  # Centering the letter vertically
+    letter_positions.append((x, y))
+
+
+
 
 
 while running:
@@ -85,23 +104,62 @@ while running:
                 frame.blit(subsurface, (i, (vertical_res - h) * 0.5))
                 break
 
+
+
+                # for letter, position in letter_positions.items():
+                #     letter_rect = pg.Rect(position[0], position[1], 32, 32)  # Example letter rectangle
+                #     if pg.Rect(x * 20, y * 20, 20, 20).colliderect(letter_rect):
+                #         screen.blit(letter_images[letter], (i, (vertical_res - 20) * 0.5))
+                #
+                #
+                # break
+
+        # for letter, position in letter_positions.items():
+        #     letter_rect = pg.Rect(position[0], position[1], 32, 32)  # Example letter rectangle
+        #     if pg.Rect(x * tile_size, y * tile_size, tile_size, tile_size).colliderect(letter_rect):
+        #         screen.blit(letter_images[letter], (i, (vertical_res - 50) * 0.5))
+        #
+        # break
+
+
+
     upscaled = pg.transform.scale(frame, [800, 600])
 
     upscaled.blit(font.render(fps, 1, [255, 255, 255]), [0, 0])
     screen.blit(upscaled, (0, 0))
 
-    # my code starts 
+    for idx, letter in enumerate(word):
+        if idx < len(letter_positions):
+            letter_x, letter_y = letter_positions[idx]
+
+            # Calculate the relative position from the player's position
+            rel_x =  letter_x  # Adjust as needed
+            rel_y = letter_y  # Adjust as needed
+
+            text = font.render(letter, True, (255, 255, 255))
+            screen.blit(text, (rel_x, rel_y))
+
+
+
+
+            # my code starts
     # Clear the screen
     # screen.fill((1, 1, 1))
      # Blit the text onto the screen
-    screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2))
+    #screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2))
 
     # Update the display
     # pg.display.flip()
 
+
     #my code ends
+
 
     pg.display.update()
 
+
+
+
+    #print(letters)
 
 pg.quit()
