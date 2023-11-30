@@ -10,7 +10,7 @@
 * Change to the project directory:
 
 `cd MazeLearner`
- *Proceed to:
+ * Proceed to:
 
 `cd mazelearner_trial`
 
