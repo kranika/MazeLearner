@@ -31,7 +31,7 @@ A retro version of MazeRunner that utilises Python 3D modelling to expose a 'Wor
   
 `logging.basicConfig(filename='log.txt', level=logging.INFO)`
 
-  Learn more about [Python logs](https://docs.python.org/3/library/logging.html).
+  To learn more about [Python logs](https://docs.python.org/3/library/logging.html).
   
 
 * You may need to obtain a **Wordnik API Key** in order to work with word meanings.
