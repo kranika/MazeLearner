@@ -125,20 +125,19 @@ while True:
         screen.blit(text, (letter_x, letter_y))
 
     # Draw Pac-Man
-    # pg.draw.circle(screen, PACMAN_COLOR, (int(pacman_x), int(pacman_y)), PACMAN_RADIUS)
-    # pg.draw.polygon(screen, BACKGROUND_COLOR, [(pacman_x, pacman_y)] + [
-    #     (pacman_x + PACMAN_RADIUS * pg.math.Vector2(1, 0).rotate(pacman_angle + angle).x,
-    #      pacman_y + PACMAN_RADIUS * pg.math.Vector2(1, 0).rotate(pacman_angle + angle).y)
-    #     for angle in range(-30, 31, 10)
-    # ])
-
-
+    pg.draw.circle(screen, PACMAN_COLOR, (int(pacman_x), int(pacman_y)), PACMAN_RADIUS)
+    pg.draw.polygon(screen, BACKGROUND_COLOR, [(pacman_x, pacman_y)] + [
+        (pacman_x + PACMAN_RADIUS * pg.math.Vector2(1, 0).rotate(pacman_angle + angle).x,
+         pacman_y + PACMAN_RADIUS * pg.math.Vector2(1, 0).rotate(pacman_angle + angle).y)
+        for angle in range(-30, 31, 10)
+    ])
 
 
       
     # Check if all letters are picked
     if not letters:
-        font = pg.font.SysFont("Arial", 36)
+        # font = pg.font.SysFont("Arial", 36)
+        font = pg.font.Font(f"{tasks.FONT_PATH}/mario.ttf", 20)
         word_text = font.render(f"Good job. You found {word.upper()} and scored {POINTS} points", True, (255, 255, 255))
         screen.blit(word_text, (WIDTH // 2 - word_text.get_width() // 2, HEIGHT // 2 - word_text.get_height() // 2))
 

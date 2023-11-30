@@ -91,6 +91,8 @@ def defineWord(word:str):
 #     ctx.fill()
 
 
+#the functions are for integrating cairo and pygame
+#dont use them for now 
 def returnSurface(width=800,height=600 ):
     # width, height = 800, 600
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
