@@ -16,6 +16,13 @@ SWITCH_DELAY = 3000  #ms
 screen = pg.display.set_mode((WIDTH, HEIGHT))
 pg.display.set_caption("Loot trial")
 
+# Load the background image
+background_image = pg.image.load(f"{tasks.IMAGE_PATH}/skybox.jpg")
+
+# Scale the image to fit the screen
+background_image = pg.transform.scale(background_image, (WIDTH, HEIGHT))
+background_rect = background_image.get_rect()
+
 # Set up Pac-Man
 pacman_x, pacman_y = WIDTH // 2, HEIGHT // 2
 pacman_angle = 45  # Initial angle
@@ -79,7 +86,8 @@ while True:
         print(f"You've picked up {collected_letter}! You have {POINTS} points")
 
     # Draw background
-    screen.fill(BACKGROUND_COLOR)
+    # screen.fill(BACKGROUND_COLOR)
+    screen.blit(background_image, background_rect)
 
     # Draw letters
     for letter_info in letters:
